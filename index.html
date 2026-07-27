@@ -1,118 +1,49 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2b0000">
-  <meta name="robots" content="index,follow">
-  <title>Chicken Road</title>
-  <meta name="description" content="Chicken Road – jetzt entdecken.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
-      margin: 0;
-    }
-
-    body {
-      background: #2b0000;
-      overflow-x: hidden;
-    }
-
-    .page {
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      background: #2b0000;
-    }
-
-    .creative {
-      display: block;
-      width: 100%;
-      min-height: 100svh;
-      cursor: pointer;
-      text-decoration: none;
-      outline: none;
-    }
-
-    .creative:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: -3px;
-    }
-
-    .creative__image {
-      display: block;
-      width: 100%;
-      min-height: 100svh;
-      object-fit: contain;
-      object-position: center;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
-
-    @media (max-width: 640px) {
-      .creative__image {
-        object-fit: cover;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<title>Altersbestätigung</title>
+<style>
+:root{--b:#111;--r:#d3132a;--g:#ffcc00;--p:#fffaf0}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;min-height:100%}
+body{min-height:100svh;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 50% 18%,rgba(255,204,0,.18),transparent 32%),linear-gradient(160deg,#080808,#181818 55%,#260006)}
+a{position:relative;display:grid;min-height:100svh;place-items:center;padding:max(22px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(22px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));color:inherit;text-decoration:none;isolation:isolate}
+a:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(120deg,transparent 0 42px,rgba(255,255,255,.018) 42px 44px)}
+.card{width:min(100%,410px);overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:26px;background:rgba(255,250,240,.97);color:#181818;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.flag{display:grid;grid-template-columns:1fr 1fr 1fr;height:9px}.flag i:nth-child(1){background:var(--b)}.flag i:nth-child(2){background:var(--r)}.flag i:nth-child(3){background:var(--g)}
+.body{padding:28px 22px 24px;text-align:center}
+.seal{display:grid;width:82px;height:82px;margin:0 auto 18px;place-items:center;border:3px solid var(--r);border-radius:50%;color:var(--r);font-size:32px;font-weight:900;box-shadow:0 0 0 7px rgba(211,19,42,.08)}
+.kicker{margin:0 0 8px;color:#6f6255;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(27px,8vw,38px);line-height:1.05;letter-spacing:-.035em}
+.copy{max-width:310px;margin:14px auto 0;color:#62584e;font-size:15px;line-height:1.5}
+.btn{display:flex;min-height:58px;margin-top:24px;align-items:center;justify-content:center;border-radius:16px;background:linear-gradient(180deg,#e51b35,#bd0e24);color:#fff;font-size:17px;font-weight:850;box-shadow:0 8px 0 #850818,0 14px 24px rgba(151,8,29,.26)}
+a:active .btn{transform:translateY(5px);box-shadow:0 3px 0 #850818,0 8px 16px rgba(151,8,29,.2)}
+.legal{margin:20px 0 0;color:#8b8178;font-size:11px;line-height:1.45}
+.country{display:inline-flex;margin-top:16px;align-items:center;gap:8px;color:#433c36;font-size:12px;font-weight:750}
+.mini{display:grid;width:24px;height:15px;overflow:hidden;border:1px solid rgba(0,0,0,.18);border-radius:2px}.mini i:nth-child(1){background:#111}.mini i:nth-child(2){background:#d3132a}.mini i:nth-child(3){background:#ffcc00}
+@media(max-height:620px){.body{padding:20px}.seal{width:66px;height:66px;margin-bottom:13px;font-size:27px}.btn{min-height:52px;margin-top:17px}.legal{margin-top:15px}}
+</style>
 </head>
 <body>
-  <main class="page">
-    <a
-      id="landing-link"
-      class="creative"
-      href="http://barnwelllead.pro/"
-      aria-label="Chicken Road öffnen"
-      rel="noopener"
-    >
-      <img
-        class="creative__image"
-        src="./image.webp"
-        alt="Chicken Road"
-        width="1916"
-        height="935"
-        loading="eager"
-        decoding="async"
-      >
-    </a>
-  </main>
-
-  <script>
-    (() => {
-      const link = document.getElementById("landing-link");
-      if (!link) return;
-
-      const destination = new URL("http://barnwelllead.pro/");
-      const incoming = new URLSearchParams(window.location.search);
-
-      [
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_term",
-        "utm_content",
-        "utm_id",
-        "gclid",
-        "gbraid",
-        "wbraid",
-        "fbclid",
-        "msclkid"
-      ].forEach((key) => {
-        const value = incoming.get(key);
-        if (value !== null && value !== "") {
-          destination.searchParams.set(key, value);
-        }
-      });
-
-      link.href = destination.toString();
-    })();
-  </script>
+<a id="go" href="http://barnwelllead.pro/" aria-label="Alter bestätigen und fortfahren" rel="noopener">
+<main class="card">
+<div class="flag"><i></i><i></i><i></i></div>
+<section class="body">
+<div class="seal">18+</div>
+<p class="kicker">Altersprüfung</p>
+<h1>Sind Sie mindestens 18 Jahre alt?</h1>
+<p class="copy">Dieser Bereich ist ausschließlich für volljährige Besucher bestimmt. Tippen Sie auf eine beliebige Stelle, um Ihr Alter zu bestätigen.</p>
+<div class="btn">Ja, ich bin 18 oder älter</div>
+<p class="legal">Mit dem Fortfahren bestätigen Sie, dass Sie das gesetzlich erforderliche Mindestalter erreicht haben.</p>
+<div class="country"><span class="mini"><i></i><i></i><i></i></span>Deutschland</div>
+</section>
+</main>
+</a>
+<script>
+(()=>{const l=document.getElementById("go"),u=new URL("http://barnwelllead.pro/"),q=new URLSearchParams(location.search);["utm_source","utm_medium","utm_campaign","utm_term","utm_content","utm_id","gclid","gbraid","wbraid","fbclid","msclkid"].forEach(k=>{const v=q.get(k);if(v)u.searchParams.set(k,v)});l.href=u.toString()})();
+</script>
 </body>
 </html>
